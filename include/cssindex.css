@@ -1,0 +1,160 @@
+root {
+    display: block;
+}
+
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    width: 140px; /* Width of Menu Items */
+    border-bottom: 0px solid #ffffff;
+    z-index:2;
+}
+
+ul li {
+    position: relative;
+    text-decoration: none;
+    padding: 5px;
+}
+
+/* Styles for Menu Items */
+ul li a {
+    display: block;
+    text-decoration: none;
+    background: #fff; /* IE6 Bug */
+    border: 0px solid #ffffff; /* IE6 Bug */
+    border-bottom: 0;
+    z-index:2;
+    font-size:1.0em;
+}
+
+/* Holly Hack. IE Requirement \*/
+* html ul li { float: left; height: 1%; }
+* html ul li a { height: 1%; }
+/* End */
+
+.lines {
+    display:block;
+    border:0px;
+    padding:0px;
+    margin:0px;
+    position:absolute;
+}
+#slideshow {
+    z-index:1;
+}
+.mainpage {
+    display:block;
+    width:1080px;
+    border:0px solid black;
+}
+.error {
+    display:block;
+    position:absolute;
+    top:145px;
+    left:275px;
+    width:300px;
+    background-color:red;
+    text-align:center;
+    font-size:14px;
+    z-index:1;
+    margin:50px;
+}
+input {
+    background-color:#dddddd;
+}
+
+textarea {
+    background-color:#dddddd;
+}
+
+.viewpicl {
+    display:block;
+    width:16px;
+    height:200px;
+    color:#ffffff;
+    line-height:90%;
+    text-align:center;
+    padding-left:0px;
+    background-color:green;
+    border:1px solid green;
+    border-radius:0px 10px 10px 0px;
+    -moz-border-radius:0px 10px 10px 0px; /* Firefox 3.6 and earlier */
+}
+.viewpicr {
+    display:block;
+    width:16px;
+    height:200px;
+    color:#ffffff;
+    line-height:90%;
+    text-align:center;
+    padding-left:0px;
+    background-color:green;
+    border:1px solid green;
+    border-radius:10px 0px 0px 10px;
+    -moz-border-radius:10px 0px 0px 10px; /* Firefox 3.6 and earlier */
+}
+.adminbox {
+    display:block;
+    width:100px;
+    height:100px;
+    border-radius:20px;
+    -moz-border-radius:20px;
+    padding:5px;
+    margin:5px;
+    text-align:center;
+    font-size:1.25em;
+    float:left;
+}
+body
+{
+    font-family: "Book Antiqua";
+    font-size: 12pt;
+    font-style: normal;
+    line-height: normal;
+    font-weight: normal;
+    font-variant: normal;
+    color: #000000;
+    text-decoration:none;
+    position:relative;
+    left:0px;
+    top:0px;
+}
+a {
+    font-family: "Book Antiqua";
+    font-size: 12pt;
+    color: #00008B;
+    text-decoration: underline;
+}
+a:hover
+{
+    font-family: "Book Antiqua";
+    font-size: 12pt;
+    color: #00008B;
+    text-decoration: underline;
+}
+
+
+a:visited
+{
+    font-family: "Book Antiqua";
+    font-size: 12pt;
+    color: #00008B;
+    text-decoration: underline;
+}
+h1
+{
+    font-family: "Book Antiqua"; font-size: 15pt; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #00008B; text-decoration: none
+}
+.def {
+    margin:20px 40px;
+    font-size: 15pt;
+    font-style: normal;
+    color:#00008B;
+    text-align:center;
+    padding-left:0px;
+    border:3px solid green;
+    border-radius:10px;
+    -moz-border-radius:10px; /* Firefox 3.6 and earlier */
+}

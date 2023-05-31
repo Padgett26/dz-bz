@@ -1,0 +1,7 @@
+
+AddHandler x-httpd-php .html .htm
+
+RewriteEngine On
+RewriteCond %{HTTP_HOST} dz-bz\.com [NC]
+RewriteCond %{SERVER_PORT} 80
+RewriteRule ^(.*)$ https://dz-bz.com/$1 [R,L]
