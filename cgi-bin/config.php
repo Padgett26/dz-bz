@@ -13,19 +13,6 @@ $domain = "dz-bz.com";
 $visitingIP = filter_input(INPUT_SERVER, 'REMOTE_ADDR', FILTER_SANITIZE_STRING);
 
 // *** Log out ***
-function destroySession ()
-{
-    $_SESSION = array();
-
-    if (ini_get("session.use_cookies")) {
-        $params = session_get_cookie_params();
-        setcookie(session_name(), '', time() - 42000, $params["path"],
-                $params["domain"], $params["secure"], $params["httponly"]);
-    }
-
-    session_destroy();
-}
-
 if (filter_input(INPUT_GET, 'logout', FILTER_SANITIZE_STRING) == 'yep') {
     destroySession();
     setcookie("staySignedIn", '', $time - 1209600, "/", $domain, 0);
