@@ -20,6 +20,15 @@ include "cgi-bin/config.php";
      <title>DzBz Home Page</title>
         <link rel='stylesheet' type='text/css' href='include/cssindex.css' />
        <script>
+       function toggleview(itm) {
+            var itmx = document.getElementById(itm);
+            if (itmx.style.display === "none") {
+                itmx.style.display = "block";
+            } else {
+                itmx.style.display = "none";
+            }
+        }
+
             window.fbAsyncInit = function () {
                 FB.init({
                     appId: '828056904040842',
@@ -68,5 +77,33 @@ include "cgi-bin/config.php";
                 <a href='symptoms.php' style='text-decoration:none; font-size:1.25em; color:#000000;'>Symptom Index</a>&nbsp;&nbsp;|&nbsp;&nbsp;
                 <a href='bmt/bmt.html' style='text-decoration:none; font-size:1.25em; color:#000000;'>QBL</a><br><br>
                 <a href='https://dzbz-107372.square.site' style='text-decoration:none; font-size:1.25em; color:#000000;'>Purchase products in the store</a>
+                <?php
+                $getTc = $db->prepare(
+                        "SELECT COUNT(*) FROM testimonials WHERE approved = '1'");
+                $getTc->execute();
+                $getTcr = $getTc->fetch();
+                if ($getTcr && $getTcr[0] >= 1) {
+                    ?><br><br>
+                <div style='text-decoration:none; font-size:1.25em; color:#000000; cursor:pointer;' onclick='toggleview("testimonials")'>Testimonials</div>
+                <?php
+                }
+                ?>
+			</div>
+			<div id='testimonials' style='display:none; background-color:#f3f7e9;'>
+			<?php
+$getT = $db->prepare("SELECT * FROM testimonials ORDER BY RAND()");
+$getT->execute();
+while ($getTr = $getT->fetch()) {
+    $testimonial = $getTr['testimonial'];
+    $tAuthor = $getTr['author'];
+    $tApproved = $getTr['approved'];
+
+    if ($tApproved == 1) {
+        echo "<div style='text-align:center; padding:20px 30px;'>";
+        echo nl2br($testimonial) . "<br><br>~ " . $tAuthor .
+                " ~<br><br>~~*~~</div>";
+    }
+}
+?>
 			</div>
 			<div style="margin:0px 40px; padding:20px; background-color:#ffffff;">
